@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Твистер</string>
+    <string name="press">Press</string>
+    <string name="name">Write your name</string>
+    <string name="rightHand">Правую руку на </string>
+    <string name="leftHand">Левую руку на </string>
+    <string name="rightFoot">Правую ногу на </string>
+    <string name="leftFoot">Левую ногу на </string>
+</resources>
