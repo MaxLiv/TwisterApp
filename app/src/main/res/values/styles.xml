@@ -30,4 +30,11 @@
         <item name="android:windowBackground">@drawable/drawable</item>
     </style>
 
+    <style name="generalnotitle" parent="AppThemeGreen">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.NoTitle" parent="@android:style/Theme.NoTitleBar" />
+
+
 </resources>
