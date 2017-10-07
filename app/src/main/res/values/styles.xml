@@ -34,7 +34,10 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.NoTitle" parent="@android:style/Theme.NoTitleBar" />
+    <style name="Clear" parent="@style/Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
 
 
 </resources>

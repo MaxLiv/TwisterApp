@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     TextView playerTextView;
     List<String> playersList = new ArrayList<>();
-    ImageButton resetButton;
 
     int count = 0;
     int size;
@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.textView);
         playerTextView = (TextView) findViewById(R.id.playerTextView);
         layout = (ConstraintLayout) findViewById(R.id.mainView);
-        resetButton = (ImageButton) findViewById(R.id.resetButton);
 
         collectPlayers();
     }
@@ -54,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         int colors[] = { Color.BLUE, Color.GREEN, Color.YELLOW, Color.RED};
         int pos = random.nextInt(colors.length);
 
-        changeViewColor(layout, resetButton,getViewBackgroundColor(layout),colors[pos]);
+        changeViewColor(layout, getViewBackgroundColor(layout),colors[pos]);
 
         setPlayer();
         changeColor(colors[pos]);
@@ -69,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void changeViewColor(final View view1, final View view2, final int initialColor, final int finalColor) {
+    private void changeViewColor(final View view1, final int initialColor, final int finalColor) {
         // Load initial and final colors.
 
         ValueAnimator anim = ValueAnimator.ofFloat(0, 1);
@@ -82,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
 
                 // Apply blended color to the view.
                 view1.setBackgroundColor(blended);
-                view2.setBackgroundColor(blended);
             }
         });
 
@@ -181,6 +179,23 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 4: textView.setText("Левую ногу на " + color);
                 break;
+        }
+    }
+
+    public void deletePlayer(View view){
+        if (count!=0) {
+            count--;
+//        textView.setText(String.valueOf(count));
+//        playerTextView.setText(String.valueOf(size));
+        }
+        Toast toast = Toast.makeText(MainActivity.this, "Удалено " + playersList.get(count), Toast.LENGTH_LONG);
+        toast.show();
+        playersList.remove(count);
+        size = playersList.size();
+        click(view);
+        if (size == 1){
+            toast.setText(playersList.get(0)+" выиграл");
+            reset(view);
         }
     }
 

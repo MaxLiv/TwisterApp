@@ -85,12 +85,41 @@
 
     <ImageButton
         android:id="@+id/resetButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/darker_gray"
+        android:layout_width="43dp"
+        android:layout_height="41dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:backgroundTintMode="src_atop"
+        android:cropToPadding="false"
+        android:elevation="0dp"
         android:onClick="reset"
+        android:scaleType="fitXY"
+
         app:srcCompat="@android:drawable/ic_popup_sync"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:layout_marginTop="12dp" />
+
+    <ImageButton
+        android:id="@+id/deleteButton"
+        android:layout_width="152dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="0dp"
+        android:adjustViewBounds="false"
+        android:background="@android:color/transparent"
+        android:cropToPadding="false"
+        android:onClick="deletePlayer"
+        android:padding="@android:dimen/app_icon_size"
+
+        android:scaleType="centerInside"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/editbox_background" />
+
 
 </android.support.constraint.ConstraintLayout>
